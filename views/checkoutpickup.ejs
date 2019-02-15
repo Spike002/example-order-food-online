@@ -1,0 +1,63 @@
+<% include ./partials/header%>
+
+<div class="container text-center">
+    <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-left" scope="col">Order Summary</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                 <tr>
+                    <th class="text-left" scope="row">Items: </th>
+                    <td class="text-left">$ <%=Order.Price%></td>
+                </tr>
+                <tr>
+                    <th class="text-left" scope="row">Qty: </th>
+                    <td class="text-left"><%=Order.Qty%></td>
+                </tr>
+                <tr>
+                    <th class="text-left" scope="row">Subtotal</th>
+                    <td class="text-left">$ <%=Order.Subtotal%></td>
+                </tr>
+                
+                <tr>
+                  <th class="text-left" scope="row">Estimated Tax</th>
+                  <td class="text-left" >$ <%=Order.EstimatedTax%></td>
+                </tr>
+                
+                <tr>
+                  <th  scope="row" class="text-left table-active ">Order Total</th>
+                  <td  class="text-left table-active">$ <%=Order.OrderTotal%></td>
+                </tr>
+                
+                
+                
+              </tbody>
+            </table>
+            
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                  Place Your Order
+                </button>
+            
+            <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      
+                      <div class="modal-body">
+                        Thank you for ordering!
+                      </div>
+                      <div class="modal-footer">
+                          <a href="/home" type="button" class="btn btn-success"> Close</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+                </div>
+            
+            
+            
+<% include ./partials/footer%>

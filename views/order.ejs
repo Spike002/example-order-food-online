@@ -1,0 +1,139 @@
+<% include ./partials/header%>
+ <h1></h1>
+    
+        <div class="container text-center">
+          <div class="row">
+            <div class="col_1  col-md-7">
+                    
+                    
+                     
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-left" scope="col" >Ordered by usename</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <th class="text-left" scope="row"><%=Foundmenu.name%></th>
+                  </tr>
+                  <tr>
+                    <th class="text-left" scope="row">price: $ <%=Foundmenu.price%></th>
+                  </tr>
+                  
+                </tbody>
+              </table>
+
+               
+              
+              <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  Enter Your Delivery Address 
+                </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Deliver To</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          
+                          <!--Delivery form-->
+                            <form>
+                                
+                                <div class="form-group text-left">
+                                  <label for="inputAddress">Address</label>
+                                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                                </div>
+                                
+                                <div class="form-row text-left ">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" id="inputCity" required>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control" required>
+                                      <option selected>Choose...</option>
+                                      <option>MA</option>
+                                      <option>RI</option>
+                                      <option>NH</option>
+                                      <option>CT</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip" required>
+                                  </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                            
+                                  
+                            
+                          <!--End delivery form-->
+                       
+                      
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- End Modal -->
+              
+              
+              
+              
+              </div>
+            </div>
+            
+            
+            <div class=" col-md-1 ">
+            </div>
+            
+            
+            <div class="cols col-md-4">
+              
+              <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th class="text-left" scope="col">Order Summary</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th class="text-left" scope="row">Subtotal</th>
+        <td class="text-left">$ <%=OrderSummary.subtotal%></td>
+    </tr>
+    <tr>
+      <th class="text-left" scope="row">Delivery</th>
+      <td class="text-left">$ 2.50</td>
+    </tr>
+    <tr>
+      <th class="text-left" scope="row">Estimated Tax</th>
+      <td class="text-left" >$ <%=OrderSummary.estTax%></td>
+    </tr>
+    
+    <tr>
+      <th  scope="row" class="text-left table-active ">Order Total</th>
+      <td  class="text-left table-active">$ <%=OrderSummary.orderTo%></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+
+              
+            </div>
+            
+          </div>
+        </div>
+
+
+<% include ./partials/footer%>

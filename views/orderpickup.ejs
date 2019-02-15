@@ -1,0 +1,41 @@
+<% include ./partials/header%>
+
+
+
+    <div class="container">
+        <form action="/pickup/checkup/<%=Foundmenu._id%> "method="POST">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Ordered by </strong><%= currentUser.username%></li>
+              <li class="list-group-item" name="<%Foundmenu.name%>"><strong>Name: </strong><%=Foundmenu.name%></li>
+              <li class="list-group-item" name="<%Foundmenu.price%>"><strong>Price: </strong>$<%=Foundmenu.price%></li>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Quantity: </label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01" name="selectedoption">
+                    <option selected>Choose...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary text-center">Continue</button>
+                </div>
+                 
+                 
+              
+            </ul>
+        </form>
+    </div>
+
+
+
+<% include ./partials/footer%>

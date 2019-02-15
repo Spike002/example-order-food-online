@@ -1,0 +1,95 @@
+<% include ./partials/header%>
+
+
+
+    <div class="container">
+        <form action="/delivery/checkup/<%=Foundmenu._id%> "method="POST">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Ordered by </strong> <%= currentUser.username%></li>
+              <li class="list-group-item" name="<%Foundmenu.name%>"><strong>Name: </strong><%=Foundmenu.name%></li>
+              <li class="list-group-item" name="<%Foundmenu.price%>"><strong>Price: </strong>$<%=Foundmenu.price%></li>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Quantity: </label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01" name="selectedoption">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div>
+                    
+                                  <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                  Enter Your Delivery Address 
+                                </button>
+                </div>
+                
+                <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Deliver To</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          
+                          <!--Enter your address form-->
+                            
+                                
+                                <div class="form-group text-left">
+                                  <label for="inputAddress">Address</label>
+                                  <input type="text" class="form-control" id="inputAddress" name="address" required>
+                                </div>
+                                
+                                <div class="form-row text-left ">
+                                  <div class="form-group col-md-6">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" id="inputCity" name="city" required>
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control"  name="selectState" required>
+                                      
+                                      <option>MA</option>
+                                      
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip" name="zipcode" required>
+                                  </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Continue</button>
+                             
+                            
+                                  
+                            
+                          <!--End Enter your address form--> 
+                       
+                      
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              
+              <!-- End Modal -->
+              
+            </ul>
+        </form>
+    </div>
+
+
+
+<% include ./partials/footer%>

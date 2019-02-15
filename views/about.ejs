@@ -1,0 +1,69 @@
+<% include ./partials/header%>
+
+<div class="container">
+    <div class=" text-center">
+            <h2>Yung River Chinese Restaurant</h2>
+            <p>Asian, Italian, Breakfast, Lunch ,and Dinner</p>
+    </div>
+        
+      <div class="row">
+        <div class="col-5">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Open Hours</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mon to Fri</td>
+                <td class="text-right">9:00 am - 10:00 pm</td>
+              
+              </tr>
+              <tr>
+                <td>Sat</td>
+                <td class="text-right">9:00 am - 12:00 pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-1">
+         
+        </div>
+        <div class="col-5">
+            <h5>Google Map</h5>
+            <a href="https://goo.gl/maps/vUF8VrNsi1z">
+              <img src="https://www.boston.com/wp-content/uploads/2019/01/Screen-Shot-2019-01-17-at-9.15.09-AM-850x478.png"  class="img-fluid" alt"" height="200" width="350">
+            </a>
+              <p>2770 Stadium Drive <br>Attleboro, MA 02703 <br> Tel: 202-555-0183</p>
+        </div>
+      </div>
+      
+      <hr class="my-4">
+      
+      <h4>Reviews for Yung River Chinese Restaurant</h4>
+            <a href="/addreview">
+             <button type="button" class="btn btn-info">Add Review</button>
+            </a>
+      <hr class="my-4">      
+      <% FoundReviews.forEach(function(reviews){ %>
+          
+            <div class="p-3 mb-2 bg-light text-dark">
+              <h5 class="mt-0 mb-1"><i class="material-icons">account_circle</i><%=reviews.author%></h5>
+              <p><%=reviews.text%></p>
+              <a href="/about/<%=reviews._id%>">
+                <button type="button" class="btn btn-danger">Delete</button>
+              </a>
+              
+            </div>
+          
+                    
+       <% }); %>
+        
+    
+</div> <!--div container-->
+
+<% include ./partials/footer%>
+
+
